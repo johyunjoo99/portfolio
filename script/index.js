@@ -23,20 +23,8 @@ $(function(){
            } else if (n<=-1) {
                n=0	
            }
-           $(".boxList").stop().animate({top:-n*100+"%"});			
+           $(".boxList").stop().animate({top:-n*100+"%"});		
+           
       });
-
-    
-
-    //page animate effect
-    $(".menu li").click(function(){
-        
-        var liIndex = $(this).index();
-        console.log(liIndex);
-        $(".boxList").stop().animate({top: -liIndex*100+"%"});
-
-    });
-
-
 })
     
