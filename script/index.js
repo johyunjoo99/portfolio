@@ -1,44 +1,7 @@
 $(function(){
 
-    // var fullHeight = $(".boxList").height();
-    // var boxLenght = $(".box").length;
-    // var scorllHeight = fullHeight / boxLenght;
-    // var boxIndex = 0;
 
-    // $(".boxList").on("mousewheel", function(event){
-
-    //     console.log(event.originalEvent.wheelDelta);
-
-    //     if(event.originalEvent.wheelDelta >= 0){
-    //         // ++ (아래)
-            
-
-    //         boxIndex--;
-
-    //         if(boxIndex <= 0){
-    //             boxIndex = 0
-    //         }
-
-    //         $(".boxList").stop().animate({marginTop: - scorllHeight * boxIndex}, 600);
-
-    //         return false;
-    //     } else if(event.originalEvent.wheelDelta < 0){
-    //         // -- (위)
-
-    //         boxIndex++;
-
-    //         if(boxIndex >= boxLenght){
-    //             boxIndex = boxLenght -1;
-    //         }
-
-    //         $(".boxList").stop().animate({marginTop: - scorllHeight * boxIndex}, 600);
-
-    //         return false;
-    //     }
-
-    // });
-
-
+    //fullpage scroll effect
     var bn = $(".box").length;
     $(".box").on("mousewheel DOMMouseScroll", function (e) {
            e.preventDefault();
@@ -64,5 +27,16 @@ $(function(){
       });
 
     
+
+    //page animate effect
+    $(".menu li").click(function(){
+        
+        var liIndex = $(this).index();
+        console.log(liIndex);
+        $(".boxList").stop().animate({top: -liIndex*100+"%"});
+
+    });
+
+
 })
     
