@@ -1,5 +1,9 @@
 $(function(){
 
+    $(".effect").each(function(){
+        $(this).addClass("active");
+    })
+
 
     //fullpage scroll effect
     var bn = $(".box").length;
@@ -23,8 +27,29 @@ $(function(){
            } else if (n<=-1) {
                n=0	
            }
-           $(".boxList").stop().animate({top:-n*100+"%"});		
+           $(".boxList").stop().animate({top:-n*100+"%"});
+           
+           $(".menu li a").removeClass("overA");
+           $(".menu li a").eq(n).addClass("overA");
+
+           $(".menu li a span").removeClass("overSpan");
+           $(".menu li a").eq(n).find("span").addClass("overSpan");
            
       });
+
+
+    //page animate effect
+    $(".menu li").click(function(){
+        
+        var liIndex = $(this).index();
+        $(".boxList").stop().animate({top: -liIndex*100+"%"});
+
+        $(".menu li").find("a").removeClass("overA")
+        $(this).find("a").addClass("overA");
+
+        $(".menu li").find("span").removeClass("overSpan");
+        $(this).find("span").addClass("overSpan");
+    });
+
 })
     
