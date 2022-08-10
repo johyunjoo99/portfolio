@@ -1,23 +1,42 @@
 @font-face {
-  font-family: "SBAggroB";
+  font-family: 'SBAggroB';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff") format("woff");
   font-weight: normal;
   font-style: normal;
 }
+
 @font-face {
-  font-family: "Pretendard-Regular";
+  font-family: 'Pretendard-Regular';
   src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
+
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  overflow: hidden;
+}
+
+.circle {
+  width: 6vmax;
+  height: 6vmax;
+  background-color: #f0e8db;
+  position: absolute;
+  top: 3%;
+  left: 3%;
+  z-index: 10;
+  mix-blend-mode: exclusion;
+  border-radius: 50%;
+  will-change: transform;
 }
 
 header {
   width: 20%;
   height: 100%;
 }
+
 header .logoBox {
   width: 100%;
   height: 50%;
@@ -25,6 +44,7 @@ header .logoBox {
   border-right: 0.2vw solid #25375c;
   position: relative;
 }
+
 header .logoBox .logo {
   width: 3.5vw;
   height: 3.5vw;
@@ -34,6 +54,7 @@ header .logoBox .logo {
   top: 1.22vw;
   left: 1.22vw;
 }
+
 header .logoBox img {
   width: 4.9vw;
   position: absolute;
@@ -42,22 +63,36 @@ header .logoBox img {
   -webkit-animation: imgRotate 10s linear infinite;
           animation: imgRotate 10s linear infinite;
 }
+
 header .menu {
   width: 100%;
   height: 50%;
   border-right: 0.2vw solid #25375c;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
+
 header .menu li {
   margin-left: 5%;
 }
+
 header .menu a.overA::before {
   opacity: 0;
-  transform: translate(0, 20px);
+  -webkit-transform: translate(0, 20px);
+          transform: translate(0, 20px);
 }
+
 header .menu li a {
   font-family: "SBAggroB";
   font-size: 1.6vw;
@@ -65,130 +100,195 @@ header .menu li a {
   -webkit-text-stroke: 0.1vw #25375c;
   position: relative;
   opacity: 1;
-  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
+
 header .menu li a::before {
   content: attr(data-text);
   position: absolute;
   left: 0;
+  -webkit-transition: 0.25s cubic-bezier(0.5, -1, 0.5, 2);
   transition: 0.25s cubic-bezier(0.5, -1, 0.5, 2);
-  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
   opacity: 1;
 }
+
 header .menu li a:hover:before {
   opacity: 0;
-  transform: translate(0, 20px);
+  -webkit-transform: translate(0, 20px);
+          transform: translate(0, 20px);
 }
+
 header .menu li a:hover span {
   opacity: 1;
-  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
+
 header .menu li a:hover span:nth-child(1) {
-  transition-delay: 0.025s;
+  -webkit-transition-delay: 0.025s;
+          transition-delay: 0.025s;
 }
+
 header .menu li a:hover span:nth-child(2) {
-  transition-delay: 0.05s;
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
 }
+
 header .menu li a:hover span:nth-child(3) {
-  transition-delay: 0.075s;
+  -webkit-transition-delay: 0.075s;
+          transition-delay: 0.075s;
 }
+
 header .menu li a:hover span:nth-child(4) {
-  transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
 }
+
 header .menu li a:hover span:nth-child(5) {
-  transition-delay: 0.125s;
+  -webkit-transition-delay: 0.125s;
+          transition-delay: 0.125s;
 }
+
 header .menu li a:hover span:nth-child(6) {
-  transition-delay: 0.15s;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
 }
+
 header .menu li a:hover span:nth-child(7) {
-  transition-delay: 0.175s;
+  -webkit-transition-delay: 0.175s;
+          transition-delay: 0.175s;
 }
+
 header .menu li a:hover span:nth-child(8) {
-  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
+
 header .menu li a:hover span:nth-child(9) {
-  transition-delay: 0.225s;
+  -webkit-transition-delay: 0.225s;
+          transition-delay: 0.225s;
 }
+
 header span.overSpan {
   opacity: 1;
-  transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
+
 header span.overSpan:nth-child(1) {
-  transition-delay: 0.025s;
+  -webkit-transition-delay: 0.025s;
+          transition-delay: 0.025s;
 }
+
 header span.overSpan:nth-child(2) {
-  transition-delay: 0.05s;
+  -webkit-transition-delay: 0.05s;
+          transition-delay: 0.05s;
 }
+
 header span.overSpan:nth-child(3) {
-  transition-delay: 0.075s;
+  -webkit-transition-delay: 0.075s;
+          transition-delay: 0.075s;
 }
+
 header span.overSpan:nth-child(4) {
-  transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
 }
+
 header span.overSpan:nth-child(5) {
-  transition-delay: 0.125s;
+  -webkit-transition-delay: 0.125s;
+          transition-delay: 0.125s;
 }
+
 header span.overSpan:nth-child(6) {
-  transition-delay: 0.15s;
+  -webkit-transition-delay: 0.15s;
+          transition-delay: 0.15s;
 }
+
 header span.overSpan:nth-child(7) {
-  transition-delay: 0.175s;
+  -webkit-transition-delay: 0.175s;
+          transition-delay: 0.175s;
 }
+
 header span.overSpan:nth-child(8) {
-  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
 }
+
 header span.overSpan:nth-child(9) {
-  transition-delay: 0.225s;
+  -webkit-transition-delay: 0.225s;
+          transition-delay: 0.225s;
 }
+
 header span {
   display: inline-block;
+  -webkit-transition: 0.25s cubic-bezier(0.5, -1, 0.5, 2);
   transition: 0.25s cubic-bezier(0.5, -1, 0.5, 2);
   color: #25375c;
   opacity: 0;
-  transform: translate(0, -20px);
+  -webkit-transform: translate(0, -20px);
+          transform: translate(0, -20px);
   margin-right: -0.458vw;
 }
 
 @-webkit-keyframes imgRotate {
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
 @keyframes imgRotate {
   100% {
-    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
+
 .container {
   width: 80%;
   height: 100%;
   overflow-y: hidden;
 }
+
 .container .boxList {
   width: 100%;
   height: 400%;
   position: relative;
 }
+
 .container .box {
   width: 100%;
-  height: 25%;
+  height: calc(100% / 4);
   border-bottom: 0.2vw solid #25375c;
   position: relative;
 }
 
 #home {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 #home h1 {
   font-family: "SBAggroB";
   text-align: center;
   font-size: 5vw;
   line-height: 7vw;
+  cursor: default;
 }
 
 .effect {
@@ -201,8 +301,10 @@ header span {
   -webkit-text-fill-color: transparent;
   background-position: 100% 0;
   background-size: 200% 100%;
+  -webkit-transition: 0.6s all cubic-bezier(0.86, 0, 0.07, 1) 0.8s;
   transition: 0.6s all cubic-bezier(0.86, 0, 0.07, 1) 0.8s;
 }
+
 .effect::before {
   content: "";
   width: 100%;
@@ -213,9 +315,12 @@ header span {
   position: absolute;
   top: 0;
   left: 0;
-  transform-origin: left;
-  transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
 }
+
 .effect::after {
   content: "";
   width: 100%;
@@ -226,16 +331,21 @@ header span {
   position: absolute;
   top: 0;
   left: 0;
-  transform-origin: left;
-  transform: scaleX(0);
+  -webkit-transform-origin: left;
+          transform-origin: left;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
 }
+
 .effect.active {
   background-position: 0 0;
 }
+
 .effect.active::before {
   -webkit-animation: anime 1.2s cubic-bezier(0.86, 0, 0.07, 1) forwards;
           animation: anime 1.2s cubic-bezier(0.86, 0, 0.07, 1) forwards;
 }
+
 .effect.active::after {
   -webkit-animation: anime 1.2s 0.5s cubic-bezier(0.86, 0, 0.07, 1) forwards;
           animation: anime 1.2s 0.5s cubic-bezier(0.86, 0, 0.07, 1) forwards;
@@ -243,36 +353,50 @@ header span {
 
 @-webkit-keyframes anime {
   0% {
-    transform-origin: left;
-    transform: scaleX(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
   }
   50% {
-    transform-origin: left;
-    transform: scaleX(1);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
   51% {
-    transform-origin: right;
+    -webkit-transform-origin: right;
+            transform-origin: right;
   }
   100% {
-    transform-origin: right;
-    transform: scaleX(0);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
   }
 }
 
 @keyframes anime {
   0% {
-    transform-origin: left;
-    transform: scaleX(0);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
   }
   50% {
-    transform-origin: left;
-    transform: scaleX(1);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
   }
   51% {
-    transform-origin: right;
+    -webkit-transform-origin: right;
+            transform-origin: right;
   }
   100% {
-    transform-origin: right;
-    transform: scaleX(0);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
   }
 }
