@@ -12,6 +12,21 @@
 }
 body {
   display: flex;
+  overflow: hidden;
+}
+
+.circle {
+  width: 4vmax;
+  height: 4vmax;
+  background-color: #f0e8db;
+  position: absolute;
+  top: -1%;
+  left: -1%;
+  z-index: 10;
+  mix-blend-mode: exclusion;
+  border-radius: 50%;
+  will-change: transform;
+  pointer-events: none;
 }
 
 header {
@@ -31,14 +46,14 @@ header .logoBox .logo {
   background-color: #25375c;
   border-radius: 30vw;
   position: absolute;
-  top: 1.22vw;
-  left: 1.22vw;
+  top: 1.5vw;
+  left: 1.5vw;
 }
 header .logoBox img {
   width: 4.9vw;
   position: absolute;
-  top: 0.5vw;
-  left: 0.5vw;
+  top: 0.81vw;
+  left: 0.81vw;
   -webkit-animation: imgRotate 10s linear infinite;
           animation: imgRotate 10s linear infinite;
 }
@@ -184,17 +199,70 @@ header span {
   justify-content: center;
   align-items: center;
 }
-#home h1 {
+#home #wall {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  transition: all 0.3s;
+}
+#home .words {
   font-family: "SBAggroB";
-  text-align: center;
-  font-size: 5vw;
-  line-height: 7vw;
+  font-size: 2.23vw;
+  letter-spacing: -0.2vw;
+  transform: translate3d(0, 0, 0);
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  margin: -10% 0 0 -33%;
+}
+#home .words-line {
+  height: 4vw;
+  overflow: hidden;
+  position: relative;
+}
+#home .words-line:nth-child(odd) {
+  transform: skew(60deg, -30deg) scaleY(0.66667);
+}
+#home .words-line:nth-child(even) {
+  transform: skew(0deg, -30deg) scaleY(1.33333);
+}
+#home .words-line:nth-child(1) {
+  left: 10%;
+}
+#home .words-line:nth-child(2) {
+  left: 20%;
+}
+#home .words-line:nth-child(3) {
+  left: 30%;
+}
+#home .words-line:nth-child(4) {
+  left: 40%;
+}
+#home .words-line:nth-child(5) {
+  left: 50%;
+}
+#home .words-line:nth-child(6) {
+  left: 60%;
+}
+#home h1 {
+  height: 5vw;
+  line-height: 4.5vw;
+  padding: 0 0.2vw;
+  transition: all 0.4s ease-in-out;
+  transform: translate3d(0, 0, 0);
+  vertical-align: top;
+  white-space: nowrap;
+  cursor: default;
+}
+#home .words:hover h1 {
+  transform: translate3d(0, -4.8vw, 0);
 }
 
 .effect {
   display: inline-block;
   position: relative;
-  -webkit-background-clip: text;
   background-clip: text;
   background: -webkit-linear-gradient(0deg, #25375c 50%, transparent 50%);
   -webkit-background-clip: text;
