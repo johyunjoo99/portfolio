@@ -45,6 +45,24 @@ $(function(){
 
     setTimeout(delay, 3000);
 
+    
+
+    //profile section start animation
+    function profileAnimate(){
+        $(".shape").css("animation-name", "border");
+        $(".shape").css("animation-delay", "1s")
+        $(".shape").css("animation-duration", "2s");
+        $(".shape").css("animation-iteration-count", 1);
+
+        $(".border svg").css("animation-name", "rotate");
+        $(".border svg").css("animation-delay", "3s");
+        $(".border svg").css("animation-duration", "1s");
+
+        setTimeout(function(){
+            $("#profile img[alt='profile']").fadeIn("slow");
+        }, 4000);
+    }
+
     //fullpage scroll effect
     var bn = $(".box").length;
     $(".box").on("mousewheel DOMMouseScroll", function (e) {
@@ -74,6 +92,10 @@ $(function(){
 
            $(".menu li a span").removeClass("overSpan");
            $(".menu li a").eq(n).find("span").addClass("overSpan");
+
+           if(n = 1){
+                profileAnimate();
+           }
            
       });
 
@@ -89,6 +111,15 @@ $(function(){
 
         $(".menu li").find("span").removeClass("overSpan");
         $(this).find("span").addClass("overSpan");
+
+        if(liIndex == 1){
+            profileAnimate();
+        }
+
     });
+
+
+
+    
 
 })

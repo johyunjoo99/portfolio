@@ -5,9 +5,9 @@
   font-style: normal;
 }
 @font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
-  font-weight: 400;
+  font-family: "PyeongChang-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Bold.woff2") format("woff2");
+  font-weight: normal;
   font-style: normal;
 }
 body {
@@ -342,5 +342,107 @@ header span {
   100% {
     transform-origin: right;
     transform: scaleX(0);
+  }
+}
+#profile {
+  overflow: hidden;
+}
+#profile .profile {
+  width: 394px;
+  height: 525px;
+  position: absolute;
+  top: 37%;
+  left: 44%;
+  transform: translate(-50%, -50%);
+}
+#profile img[alt=profile] {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  display: none;
+}
+#profile .border {
+  width: 394px;
+  height: 525px;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+}
+#profile svg {
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+#profile .shape {
+  stroke-dashoffset: 1838;
+  stroke-dasharray: 1838;
+  fill: transparent;
+  stroke: #25375c;
+  transition: stroke-dasharray 4s, stroke-dasharray 4s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+.file {
+  width: 6vw;
+  height: 6vw;
+  cursor: pointer;
+  position: absolute;
+  display: none;
+}
+.file:nth-of-type(2) {
+  top: 10%;
+  left: 22%;
+}
+.file:nth-of-type(3) {
+  top: 50%;
+  left: 20%;
+}
+.file:nth-of-type(4) {
+  top: 15%;
+  right: 25%;
+}
+.file:last-of-type {
+  top: 50%;
+  right: 27%;
+}
+.file img {
+  width: 4.2vw;
+  margin: 8% 0 8% 13.5%;
+}
+.file p {
+  font-family: "PyeongChang-Bold";
+  font-size: 0.9vw;
+  width: 100%;
+  text-align: center;
+  margin-top: -0.5vw;
+  line-height: 1.05vw;
+}
+
+@-webkit-keyframes border {
+  0% {
+    stroke-dashoffset: -1838;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes border {
+  0% {
+    stroke-dashoffset: -1838;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes rotate {
+  100% {
+    transform: rotate(15deg);
+  }
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(15deg);
   }
 }
