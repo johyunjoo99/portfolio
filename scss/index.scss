@@ -1,0 +1,500 @@
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// 어그로체
+
+@font-face {
+    font-family: 'PyeongChang-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChang-Bold.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+// 평창체
+
+$mainColor: #25375c;
+$skyblue: #83aeaf;
+$blue: #728397;
+$titleFont: 'SBAggroB';
+$mainFont: 'PyeongChang-Bold';
+$letters: 9;
+$total-lines: 5;
+$left-offset: 10%;
+$clip-height: 4.8vw;
+$line-height: $clip-height - 0.3vw;
+
+body{
+    display: flex;
+    overflow: hidden;
+}
+
+
+.circle{
+    width: 4vmax;  height: 4vmax;
+    background-color: #f0e8db;
+    position: absolute;
+    top: -1%; left: -1%;
+    z-index: 10;
+    mix-blend-mode: exclusion;
+    border-radius: 50%;
+    will-change: transform;
+    pointer-events: none;
+}
+
+//header
+header{
+    width: 20%; height: 100%;
+
+    .logoBox{
+        width: 100%; height: 50%;
+        border-bottom: 0.2vw solid $mainColor;
+        border-right: 0.2vw solid $mainColor;
+        position: relative;
+
+        .logo{
+            width: 3.5vw; height: 3.5vw;
+            background-color: $mainColor;
+            border-radius: 30vw;
+            position: absolute;
+            top: 1.5vw; left: 1.5vw;
+        }
+
+        img{
+            width: 4.9vw;
+            position: absolute;
+            top: 0.81vw; left: 0.81vw;
+            animation: imgRotate 10s linear infinite;
+        }
+    }
+
+    .menu{
+        width: 100%; height: 50%;
+        border-right: 0.2vw solid $mainColor;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+
+        li{
+            margin-left: 5%;
+        }
+
+        a.overA::before{
+            opacity: 0;
+            transform: translate(0, 20px);
+        }
+
+        li a{
+            font-family: $titleFont;
+            font-size: 1.6vw;
+            color: rgba(0, 0, 0, 0);
+            -webkit-text-stroke: 0.1vw $mainColor;
+            position: relative;
+            opacity: 1;
+            transform: translate(0, 0);
+
+                &::before{
+                    content: attr(data-text);
+                    position: absolute;
+                    left: 0;
+                    transition: .25s cubic-bezier(0.5,-1, 0.5, 2);
+                    transform: translate(0, 0);
+                    opacity: 1;
+                }
+
+
+                &:hover{
+                    &:before {
+                        opacity: 0;
+                        transform: translate(0, 20px);
+                    }
+                    span {
+                            opacity: 1;
+                            transform: translate(0, 0);
+                        }
+        
+                    @for $i from 1 through $letters{
+                        span:nth-child(#{$i}){
+                            transition-delay: 0.025s * $i;   
+                        }
+                    }
+        
+                }
+
+            }
+
+        }
+
+        span.overSpan{
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+
+        @for $i from 1 through $letters{
+            span.overSpan:nth-child(#{$i}){
+                transition-delay: 0.025s * $i;   
+            }
+        }
+
+        span{
+            display: inline-block;
+            transition: .25s cubic-bezier(0.5,-1, 0.5, 2);
+            color: $mainColor;
+            opacity: 0;
+            transform: translate(0, -20px);
+            margin-right: -0.458vw;
+        }
+        
+    }
+
+
+
+@keyframes imgRotate{
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.container{
+    width: 80%; height: 100%;
+    overflow-y: hidden;
+
+    .boxList{
+        width: 100%; height: 400%;
+        position: relative;
+    }
+
+
+    .box{
+        width: 100%; height: calc(100% / 4);
+        border-bottom: 0.2vw solid $mainColor;
+        position: relative;
+    }
+}
+
+#home{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    #wall{
+        width: 100%; height: 100%;
+        position: absolute;
+        top: 0; left: 0;
+        z-index: 20;
+        transition: all 0.3s;
+    }
+
+.words{
+    font-family: $titleFont;
+    font-size: 2.23vw;
+    letter-spacing: -0.2vw;
+    transform: translate3d(0, 0, 0);
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    margin: -10% 0 0 -33%;
+}
+
+.words-line{
+    height: 4vw;
+    overflow: hidden;
+    position: relative;
+
+    &:nth-child(odd){
+        transform: skew(60deg, -30deg) scaleY(.66667);
+    }
+
+    &:nth-child(even){
+        transform: skew(0deg, -30deg) scaleY(1.33333);
+    }
+
+    @for $i from 1 through $total-lines+1 {
+        &:nth-child(#{$i}) {
+          left: $left-offset * $i;
+        }
+      }
+}
+
+    h1{
+        height: 5vw;
+        line-height: $line-height;
+        padding: 0 0.2vw;
+        transition: all .4s ease-in-out;
+        transform: translate3d(0, 0, 0);
+        vertical-align: top;
+        white-space: nowrap;
+        cursor: default;
+    }
+    .words:hover {
+        h1 {
+          transform: translate3d(0, -($clip-height), 0);
+        }
+      }
+    
+}
+
+.effect{
+    display: inline-block;
+    position: relative;
+    background-clip: text;
+    background: -webkit-linear-gradient(0deg, $mainColor 50%, transparent 50%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-position: 100% 0;
+    background-size:200% 100%;
+    transition: 0.6s all cubic-bezier(0.860, 0.000, 0.070, 1.000) 0.8s;
+
+    &::before{
+        content: "";
+        width: 100%; height: 100%;
+        background: $blue;
+        z-index: 2;
+        display: block;
+        position: absolute;
+        top: 0; left: 0;
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+
+    &::after{
+        content: "";
+        width: 100%; height: 100%;
+        background: $mainColor;
+        z-index: 2;
+        display: block;
+        position: absolute;
+        top: 0; left: 0;
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+
+    &.active{
+        background-position: 0 0;
+
+        &::before{
+            animation: anime 1.2s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
+        }
+
+        &::after{
+            animation: anime 1.2s 0.5s cubic-bezier(0.860, 0.000, 0.070, 1.000) forwards;
+        }
+    }
+
+
+
+
+}
+
+
+@keyframes anime {
+    0% {
+      transform-origin: left;
+      transform: scaleX(0);
+    }
+    50% {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+    51%{
+      transform-origin: right;
+    }
+    100% {
+      transform-origin: right;
+      transform: scaleX(0);
+    }
+  }
+
+
+
+
+  #profile{
+
+    overflow: hidden;
+
+    .profile{
+        width: 394px; height: 525px;
+        position: absolute;
+        top: 50%; left: 8%;
+        transform: translateY(-50%);
+    }
+
+    img[alt="profile"]{
+        position: absolute;
+        top: 0; left: 10%;
+        display: none;
+    }
+
+    .border{
+        width: 394px; height: 525px;
+        position: absolute;
+        top: 50%; left: 10%;
+        transform: translateY(-50%);
+    }
+
+    svg{
+        animation-fill-mode: forwards;
+    }
+
+    .shape{
+        stroke-dashoffset: 1838; 
+        stroke-dasharray: 1838; 
+        fill: transparent;
+        stroke: $mainColor;
+        transition: stroke-dasharray 4s, stroke-dasharray 4s;
+        animation-fill-mode: forwards;
+    }
+
+
+    .profileText{
+        width: 62%; height: 61.5%;
+        // border: 0.01vw solid red;
+        position: absolute;
+        top: 50%; right: 0;
+        transform: translateY(-50%);
+        padding-left: 10%;
+
+        h1{
+            width: 100%;
+            font-family: $titleFont;
+            font-size: 3vw;
+            color: $mainColor;
+            display: none;
+            cursor: default;
+
+            &:last-of-type{
+                margin-bottom: 10%;
+            }
+        }
+
+        ul{
+            width: 85%;
+            border-top: 0.15vw solid $mainColor;
+            display: none;
+        }
+
+        li{
+            font-family: $mainFont;
+            font-size: 1.7vw;
+            border-bottom: 0.15vw solid $mainColor;
+            padding: 0.6vw 0.5vw;
+            cursor: pointer;
+            
+            span{
+                float: right;
+                transition: all 2s ease;
+            }
+
+            // &:hover span{
+            //         transform: rotate(315deg);
+            // }
+        }
+    }
+
+    .popup{
+        height: auto;
+        padding: 1vw;
+        border: 0.15vw solid $mainColor;
+        background-color: #f0e8db;
+        position: absolute;
+        z-index: 10;
+        font-family: $mainFont;
+        font-size: 1.1vw;
+        display: none;
+        cursor: default;
+        pointer-events: none;
+
+        h2{
+            font-family: $titleFont;
+            font-size: 1.8vw;
+            text-align: center;
+            margin-bottom: 3%;
+        }
+        
+        p{
+            margin-bottom: 1.5%;
+        }
+
+        &.about{
+            width: 20vw; 
+
+            .margin{
+                margin: 3% 0 0%;
+            }
+
+            p{
+                padding: 0 3%;
+            }
+        }
+
+        &.education{
+            width: 28vw;
+            
+            p{
+                padding: 0 10%;
+            }
+
+            span{
+                float: right;
+            }
+        }
+
+        &.technical{
+            width: 35vw;
+
+            .technicalBox{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+
+                .available{
+                    width: 8.5vw;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 2%;
+                }
+
+                img{
+                    width: 4vw;
+                }
+
+                p{
+                    text-align: center;
+                }
+            }
+
+        }
+
+        &.contact{
+            width: 22vw;
+
+            p{
+                padding: 0 2.5%;
+            }
+        }
+    }
+
+  }
+
+  @keyframes border {
+    0%{
+        stroke-dashoffset: -1838; 
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+  }
+
+  @keyframes rotate {
+    100%{
+        transform: rotate(15deg);
+    }
+  }
+
+

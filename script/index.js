@@ -61,6 +61,14 @@ $(function(){
         setTimeout(function(){
             $("#profile img[alt='profile']").fadeIn("slow");
         }, 4000);
+
+        setTimeout(function(){
+            $(".profileText h1").fadeIn("slow");
+        }, 4500);
+
+        setTimeout(function(){
+            $(".profileText ul").fadeIn("slow");
+        }, 4800);
     }
 
     //fullpage scroll effect
@@ -119,7 +127,29 @@ $(function(){
     });
 
 
+    //profile ul hover effect
+    $(".profileText ul li").hover(function(){
+    
+        $(".profileText ul li").mousemove(function(event){
 
+            var liIdx = $(this).index();
+            $(".popup").eq(liIdx).stop().fadeIn("fast");
+    
+            var headerWidth = $("header").width();
+            var popupWidth = $(".popup").eq(liIdx).width();
+            var popupHeight = $(".popup").eq(liIdx).height();
+
+            $(".popup").css("top", event.clientY - popupHeight - 50);
+            $(".popup").css("left", event.clientX - headerWidth - popupWidth - 70);
+        });
+
+
+    }, function(){
+
+        var liIdx = $(this).index();
+        $(".popup").eq(liIdx).stop().css("display", "none");
+
+    });
     
 
 })
