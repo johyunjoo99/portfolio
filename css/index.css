@@ -41,19 +41,20 @@ header .logoBox {
   position: relative;
 }
 header .logoBox .logo {
-  width: 3.5vw;
-  height: 3.5vw;
+  width: 3.4vw;
+  height: 3.4vw;
   background-color: #25375c;
   border-radius: 30vw;
   position: absolute;
-  top: 1.5vw;
-  left: 1.5vw;
+  top: 1.4vw;
+  left: 1.4vw;
 }
 header .logoBox img {
-  width: 4.9vw;
+  width: 4.7vw;
   position: absolute;
-  top: 0.81vw;
-  left: 0.81vw;
+  top: 0.8vw;
+  left: 0.8vw;
+  transform-origin: center;
   -webkit-animation: imgRotate 10s linear infinite;
           animation: imgRotate 10s linear infinite;
 }
@@ -396,7 +397,9 @@ header span {
   font-family: "SBAggroB";
   font-size: 3vw;
   color: #25375c;
-  display: none;
+  transform: translateY(-1vw);
+  opacity: 0;
+  transition: all 0.8s ease;
   cursor: default;
 }
 #profile .profileText h1:last-of-type {
@@ -405,7 +408,9 @@ header span {
 #profile .profileText ul {
   width: 85%;
   border-top: 0.15vw solid #25375c;
-  display: none;
+  transform: translateY(1vw);
+  opacity: 0;
+  transition: all 0.8s ease;
 }
 #profile .profileText li {
   font-family: "PyeongChang-Bold";
@@ -427,7 +432,7 @@ header span {
   z-index: 10;
   font-family: "PyeongChang-Bold";
   font-size: 1.1vw;
-  display: none;
+  opacity: 0;
   cursor: default;
   pointer-events: none;
 }

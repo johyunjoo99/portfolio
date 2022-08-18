@@ -55,17 +55,18 @@ header{
         position: relative;
 
         .logo{
-            width: 3.5vw; height: 3.5vw;
+            width: 3.4vw; height: 3.4vw;
             background-color: $mainColor;
             border-radius: 30vw;
             position: absolute;
-            top: 1.5vw; left: 1.5vw;
+            top: 1.4vw; left: 1.4vw;
         }
 
         img{
-            width: 4.9vw;
+            width: 4.7vw;
             position: absolute;
-            top: 0.81vw; left: 0.81vw;
+            top: 0.8vw; left: 0.8vw;
+            transform-origin: center;
             animation: imgRotate 10s linear infinite;
         }
     }
@@ -362,7 +363,9 @@ header{
             font-family: $titleFont;
             font-size: 3vw;
             color: $mainColor;
-            display: none;
+            transform: translateY(-1vw);
+            opacity: 0;
+            transition: all 0.8s ease;
             cursor: default;
 
             &:last-of-type{
@@ -373,7 +376,9 @@ header{
         ul{
             width: 85%;
             border-top: 0.15vw solid $mainColor;
-            display: none;
+            transform: translateY(1vw);
+            opacity: 0;
+            transition: all 0.8s ease;
         }
 
         li{
@@ -403,7 +408,7 @@ header{
         z-index: 10;
         font-family: $mainFont;
         font-size: 1.1vw;
-        display: none;
+        opacity: 0;
         cursor: default;
         pointer-events: none;
 
