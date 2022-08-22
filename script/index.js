@@ -73,6 +73,7 @@ $(function(){
 
     //fullpage scroll effect
     var bn = $(".box").length;
+
     $(".box").on("mousewheel DOMMouseScroll", function (e) {
            e.preventDefault();
            var delta = 0;
@@ -87,13 +88,14 @@ $(function(){
            } else { 
                    n = $(this).index()-1;
            }
-           console.log(n)
+
            if( n >= bn ) {
                n=bn-1;	
            } else if (n<=-1) {
                n=0	
            }
            $(".boxList").stop().animate({top:-n*100+"%"});
+
            
            $(".menu li a").removeClass("overA");
            $(".menu li a").eq(n).addClass("overA");
@@ -104,6 +106,9 @@ $(function(){
            if(n = 1){
                 profileAnimate();
            }
+
+
+
            
       });
 
@@ -153,6 +158,38 @@ $(function(){
 
             var liIdx = $(this).index();
             $(".popup").eq(liIdx).stop().css("opacity", 0);
+
+        });
+
+
+
+        //가로 스크롤
+        var pf = $(".pfbox").length;
+    
+        $(".pfbox").on("mousewheel DOMMouseScroll", function(e){
+
+            e.preventDefault();
+
+            var delta = 0;
+            if(!event) event = window.event;
+            if(event.wheelDelta){
+                delta = event.wheelDelta / 120;
+                if(window.opera) delta = -delta;
+            } else if(event.detail) delta = -event.detail / 3;
+
+            if(delta < 0){
+                w = $(this).index() + 1;
+            } else{
+                w = -$(this).index() - 1;
+            }
+
+            if(w >= pf){
+                w = pf - 1;
+            } else if(n <= -1){
+                w = 0
+            }
+
+            $(".pfList").stop().animate({left: -w * 100 + "%"});
 
         });
 
