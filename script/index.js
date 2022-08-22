@@ -71,6 +71,7 @@ $(function(){
         }, 4800);
     }
 
+
     //fullpage scroll effect
     var bn = $(".box").length;
 
@@ -86,17 +87,17 @@ $(function(){
            if (delta < 0) {
                    n = $(this).index()+1;
            } else { 
-                   n = $(this).index()-1;
+                   n = $(this).index()-1;   
            }
 
            if( n >= bn ) {
-               n=bn-1;	
-           } else if (n<=-1) {
-               n=0	
+               n = bn - 1;	
+           } else if (n <= -1) {
+               n = 0;	
            }
+
            $(".boxList").stop().animate({top:-n*100+"%"});
 
-           
            $(".menu li a").removeClass("overA");
            $(".menu li a").eq(n).addClass("overA");
 
@@ -108,7 +109,15 @@ $(function(){
            }
 
 
+           if(n = 2){
+                $(".next").click(function(){
+                    $(".boxList").stop().animate({left: -100 + "%"});
+                });
 
+                $(".prev").click(function(){
+                    $(".boxList").stop().animate({left: 0});
+                });
+           }
            
       });
 
@@ -161,13 +170,11 @@ $(function(){
 
         });
 
-
-
         //가로 스크롤
         var pf = $(".pfbox").length;
     
         $(".pfbox").on("mousewheel DOMMouseScroll", function(e){
-
+ 
             e.preventDefault();
 
             var delta = 0;
@@ -178,14 +185,24 @@ $(function(){
             } else if(event.detail) delta = -event.detail / 3;
 
             if(delta < 0){
-                w = $(this).index() + 1;
+                console.log(n);
+                if(n == 2){
+                    n = 2;
+                    w = $(this).index() + 1;
+                }
+                
             } else{
-                w = -$(this).index() - 1;
+                console.log(n);
+                if(n == 2){
+                    n = 2;
+                    w = $(this).index() - 1;
+                }
+                
             }
 
             if(w >= pf){
                 w = pf - 1;
-            } else if(n <= -1){
+            } else if(w <= -1){
                 w = 0
             }
 
@@ -193,5 +210,13 @@ $(function(){
 
         });
 
+
+
+        //logo hove effect
+        $(".pfLogo").hover(function(){
+            $(this).children(".overlay").css("transform", "scaleY(1)");
+        }, function(){
+            $(this).children(".overlay").css("transform", "scaleY(0)");
+        });
 
 })
