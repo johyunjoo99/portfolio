@@ -110,10 +110,6 @@ $(function(){
 
 
            if(n = 2){
-                $(".next").click(function(){
-                    $(".boxList").stop().animate({left: -100 + "%"});
-                });
-
                 $(".prev").click(function(){
                     $(".boxList").stop().animate({left: 0});
                 });
@@ -212,11 +208,29 @@ $(function(){
 
 
 
-        //logo hove effect
+        //logo hover effect
         $(".pfLogo").hover(function(){
-            $(this).children(".overlay").css("transform", "scaleY(1)");
+            
+            $(this).children(".overlay").css("opacity", 1);
+            $(this).find("h2, p, button").css("transform", "translateY(0)");
+            $(this).find("h2, p, button").css("opacity", 1);
+
         }, function(){
-            $(this).children(".overlay").css("transform", "scaleY(0)");
+
+            $(this).children(".overlay").css("opacity", 0);
+            $(this).find("h2, p, button").css("transform", "translateY(20px)");
+            $(this).find("h2, p, button").css("opacity", 0);
+
         });
 
+
+        //logo button click effect
+        $(".pfLogo .overlay button").click(function(){
+            
+            $(".boxList").stop().animate({left: -100 + "%"});
+
+            var btnIndex = $(this).parents(".pfLogo").index();
+            $(".pfList").stop().animate({left: -btnIndex * 100 + "%"});
+
+        });
 })
