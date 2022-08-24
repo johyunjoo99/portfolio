@@ -7,10 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>조현주's Portfolio</title>
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="css/common.css">
     <link rel="stylesheet" href="css/index.css">
 
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script src="script/index.js"></script>
 
@@ -55,12 +59,10 @@
                     <span>I</span>
                     <span>O</span>
                 </a></li>
-            <li><a href="javascript:void(0)" data-text="ABOUT">
-                    <span>A</span>
-                    <span>B</span>
-                    <span>O</span>
-                    <span>U</span>
-                    <span>T</span>
+            <li><a href="javascript:void(0)" data-text="END">
+                    <span>E</span>
+                    <span>N</span>
+                    <span>D</span>
                 </a></li>
         </ul>
     </header>
@@ -198,55 +200,78 @@
 
             <!-- portfolio -->
             <div id="portfolio" class="box">
-                <div class="pfzip">
-                    <div class="pfLogo">
-                        <img src="img/index_img/kaws_logo.svg" alt="kaws">
-                        <div class="overlay">
+                <h1>GIVE IT A SWIPE!</h1>
+                <div class="swipeIcon"></div>
+                <div class="container swiper-container">
+                    <div class="wrapper swiper-wrapper">
+                        <div class="pfInfo swiper-slide">
+                            <div class="image">
+                                <div class="overlay">
+                                    <span>HOVER</span>
+                                </div>
+                                <img src="img/index_img/kaws_page.jpeg" alt="KAWS">
+                            </div>
                             <h2>KAWS</h2>
-                            <p>FIRST RESPONSIVE PROJECT</p>
-                            <button>VIEW MORE</button>
+                            <p>FIRST<br>
+                               RESPONSIVE PROJECT</p>
+                            <div class="next">VIEW MORE</div>
                         </div>
-                    </div>
-                    <div class="pfLogo">
-                        <img src="img/index_img/aladdin_logo.svg" alt="aladdin">
-                        <div class="overlay">
+                        <div class="pfInfo swiper-slide">
+                            <div class="image">
+                                <div class="overlay">
+                                    <span>HOVER</span>
+                                </div>
+                                <img src="img/index_img/aladdin_page.jpeg" alt="ALADDIN">
+                            </div>
                             <h2>ALADDIN</h2>
                             <p>AJAX PROJECT</p>
-                            <button>VIEW MORE</button>
+                            <div class="next">VIEW MORE</div>
                         </div>
-                    </div>
-                    <div class="pfLogo">
-                        <img src="img/index_img/the_classic_logo.svg" alt="the classic">
-                        <div class="overlay">
-                            <h2>THE<br>
-                                CLASSIC</h2>
-                            <p>THIRD RESPONSIVE PROJECT</p>
-                            <button>VIEW MORE</button>
+                        <div class="pfInfo swiper-slide">
+                            <div class="image">
+                                <div class="overlay">
+                                    <span>HOVER</span>
+                                </div>
+                                <img src="img/index_img/the_classic_page.jpeg" alt="THE CLASSIC">
+                            </div>
+                            <h2>THE CLASSIC</h2>
+                            <p>THIRD <br>
+                               RESPONSIVE PROJECT</p>
+                            <div class="next">VIEW MORE</div>
                         </div>
-                    </div>
-                    <div class="pfLogo">
-                        <img src="img/index_img/rieul_logo.svg" alt="rieul">
-                        <div class="overlay">
+                        <div class="pfInfo swiper-slide">
+                            <div class="image">
+                                <div class="overlay">
+                                    <span>HOVER</span>
+                                </div>
+                                <img src="img/index_img/rieul_page.jpeg" alt="RIEUL">
+                            </div>
                             <h2>RIEUL</h2>
-                            <p>SECOND RESPONSIVE PROJECT</p>
-                            <button>VIEW MORE</button>
+                            <p>SECOND<br>
+                               RESPONSIVE PROJECT</p>
+                            <div class="next">VIEW MORE</div>
                         </div>
-                    </div>
-                    <div class="pfLogo">
-                        <img src="img/index_img/studio_painting_logo.svg" alt="studio painting">
-                        <div class="overlay">
-                            <h2>STUDIO<br>
-                                PAINTING</h2>
+                        <div class="pfInfo swiper-slide">
+                            <div class="image">
+                                <div class="overlay">
+                                    <span>HOVER</span>
+                                </div>
+                                <img src="img/index_img/studio_painting_page.jpg" alt="STUDIO PAINTING">
+                            </div>
+                            <h2>STUDIO PAINTING</h2>
                             <p>FIRST PROJECT</p>
-                            <button>VIEW MORE</button>
+                            <div class="next">VIEW MORE</div>
                         </div>
-                    </div>
-                    <div class="pfLogo">
-                        <img src="img/index_img/joker_logo.svg" alt="joker">
-                        <div class="overlay">
+                        <div class="pfInfo swiper-slide">
+                            <div class="image">
+                                <div class="overlay">
+                                    <span>HOVER</span>
+                                </div>
+                                <img src="img/index_img/joker_page.jpeg" alt="JOKER">
+                            </div>
                             <h2>JOKER</h2>
                             <p>TEAM PROJECT</p>
-                            <button>VIEW MORE</button>
+                            <div class="next">VIEW MORE</div>
                         </div>
                     </div>
                 </div>
@@ -254,7 +279,7 @@
 
 
             <!-- about -->
-            <div id="about" class="box">4</div>
+            <div id="end" class="box">4</div>
 
             <!-- 가로 스크롤 -->
             <div class="pf">

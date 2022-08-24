@@ -192,6 +192,7 @@ header span {
   height: 25%;
   border-bottom: 0.2vw solid #25375c;
   position: relative;
+  overflow: hidden;
 }
 
 #home {
@@ -520,112 +521,180 @@ header span {
     transform: rotate(15deg);
   }
 }
-#portfolio {
-  overflow: hidden;
+@-webkit-keyframes swiper {
+  0%, 80%, 100% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0), 1.5vw 0px 0px rgba(37, 55, 92, 0), 3vw 0px 0px rgba(37, 55, 92, 0);
+  }
+  10% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0.5), 1.5vw 0px 0px rgba(37, 55, 92, 0), 3vw 0px 0px rgba(37, 55, 92, 0);
+  }
+  20% {
+    text-shadow: 0vw 0px 0px rgb(37, 55, 92), 1.5vw 0px 0px rgba(37, 55, 92, 0), 3vw 0px 0px rgba(37, 55, 92, 0);
+  }
+  30% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0.5), 1.5vw 0px 0px rgba(37, 55, 92, 0.5), 3vw 0px 0px rgba(37, 55, 92, 0);
+  }
+  40% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0), 1.5vw 0px 0px rgb(37, 55, 92), 3vw 0px 0px rgba(37, 55, 92, 0);
+  }
+  50% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0), 1.5vw 0px 0px rgba(37, 55, 92, 0.5), 3vw 0px 0px rgba(37, 55, 92, 0.5);
+  }
+  60% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0), 1.5vw 0px 0px rgba(37, 55, 92, 0), 3vw 0px 0px rgb(37, 55, 92);
+  }
+  70% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0), 1.5vw 0px 0px rgba(37, 55, 92, 0), 3vw 0px 0px rgba(37, 55, 92, 0.5);
+  }
+}
+@keyframes swiper {
+  0%, 80%, 100% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0), 1.5vw 0px 0px rgba(37, 55, 92, 0), 3vw 0px 0px rgba(37, 55, 92, 0);
+  }
+  10% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0.5), 1.5vw 0px 0px rgba(37, 55, 92, 0), 3vw 0px 0px rgba(37, 55, 92, 0);
+  }
+  20% {
+    text-shadow: 0vw 0px 0px rgb(37, 55, 92), 1.5vw 0px 0px rgba(37, 55, 92, 0), 3vw 0px 0px rgba(37, 55, 92, 0);
+  }
+  30% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0.5), 1.5vw 0px 0px rgba(37, 55, 92, 0.5), 3vw 0px 0px rgba(37, 55, 92, 0);
+  }
+  40% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0), 1.5vw 0px 0px rgb(37, 55, 92), 3vw 0px 0px rgba(37, 55, 92, 0);
+  }
+  50% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0), 1.5vw 0px 0px rgba(37, 55, 92, 0.5), 3vw 0px 0px rgba(37, 55, 92, 0.5);
+  }
+  60% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0), 1.5vw 0px 0px rgba(37, 55, 92, 0), 3vw 0px 0px rgb(37, 55, 92);
+  }
+  70% {
+    text-shadow: 0vw 0px 0px rgba(37, 55, 92, 0), 1.5vw 0px 0px rgba(37, 55, 92, 0), 3vw 0px 0px rgba(37, 55, 92, 0.5);
+  }
+}
+#portfolio h1 {
+  font-family: "SBAggroB";
+  font-size: 3vw;
+  margin-top: 3.5%;
+  padding-left: 4%;
+}
+#portfolio .swipeIcon::after {
+  position: absolute;
+  top: 5.5%;
+  left: 43%;
+  transform: translateX(-50%);
+  -webkit-animation: swiper 2s linear infinite;
+          animation: swiper 2s linear infinite;
+  font-size: 3vw;
+  color: transparent;
+  font-family: FontAwesome;
+  content: "\f105";
+  text-shadow: 0vw 0px 0px rgb(37, 55, 92), 1.5vw 0px 0px rgb(37, 55, 92), 1.5vw 0px 0px rgb(37, 55, 92);
+}
+#portfolio .container {
+  width: 90%;
+  height: 80%;
+  position: absolute;
+  top: 55%;
+  right: 0;
+  transform: translateY(-50%);
+}
+#portfolio .container .wrapper {
+  width: 180vw;
+  height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
-#portfolio .pfzip {
-  width: 80%;
-  height: 75%;
+#portfolio .container .pfInfo {
+  width: 25vw;
+  height: 95%;
+  border: 0.15vw solid #25375c;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
 }
-#portfolio .pfzip .pfLogo {
-  width: 15vw;
-  height: 15vw;
-  background-color: #25375c;
+#portfolio .container .pfInfo .image {
+  width: 80%;
+  height: 20vw;
+  border: 0.15vw solid #25375c;
+  overflow: hidden;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 2%;
-  border-radius: 1.8vw;
 }
-#portfolio .pfzip .pfLogo:first-of-type {
-  background-color: #5b5652;
+#portfolio .container .pfInfo .image:hover .overlay {
+  display: none;
 }
-#portfolio .pfzip .pfLogo:nth-of-type(2) {
-  background-color: #201e1f;
-}
-#portfolio .pfzip .pfLogo:nth-of-type(3) {
-  background-color: #1c1c1c;
-}
-#portfolio .pfzip .pfLogo:nth-of-type(4) {
-  background-color: #343434;
-}
-#portfolio .pfzip .pfLogo:nth-of-type(5) {
-  background-color: #2f3841;
-}
-#portfolio .pfzip .pfLogo:last-of-type {
-  background-color: #1c1c1c;
-}
-#portfolio .pfzip .pfLogo img {
-  width: 90%;
-  height: 90%;
-}
-#portfolio .pfzip .pfLogo .overlay {
-  width: 90%;
-  height: 90%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+#portfolio .container .pfInfo .image .overlay {
+  width: 100%;
+  height: 100%;
   position: absolute;
-  z-index: 10;
+  z-index: 5;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 0 5%;
-  transition: all 0.2s ease-out;
-  cursor: default;
-  opacity: 0;
-  background: rgba(0, 0, 0, 0.3);
-  -webkit-backdrop-filter: blur(15px);
-          backdrop-filter: blur(15px);
-  border-radius: 1.5vw;
-  mix-blend-mode: lighten;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
-#portfolio .pfzip .pfLogo .overlay h2 {
+#portfolio .container .pfInfo .image .overlay span {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: "SBAggroB";
-  font-size: 2.1vw;
-  text-align: center;
-  margin-bottom: 0.5vw;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-  color: #fff;
+  font-size: 1.5vw;
 }
-#portfolio .pfzip .pfLogo .overlay p {
-  font-family: "PyeongChang-Bold";
-  font-size: 1vw;
-  text-align: center;
-  margin-bottom: 1vw;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-  color: #fff;
+#portfolio .container .pfInfo .image img {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 4s ease;
 }
-#portfolio .pfzip .pfLogo .overlay button {
-  background: none;
-  border: none;
+#portfolio .container .pfInfo:first-of-type img:hover {
+  top: -180%;
+}
+#portfolio .container .pfInfo:nth-of-type(2) img:hover {
+  top: -176%;
+}
+#portfolio .container .pfInfo:nth-of-type(3) img:hover {
+  top: -73%;
+}
+#portfolio .container .pfInfo:nth-of-type(4) img:hover {
+  top: -93%;
+}
+#portfolio .container .pfInfo:nth-of-type(5) img:hover {
+  top: -267%;
+}
+#portfolio .container .pfInfo:last-of-type img:hover {
+  top: -60%;
+}
+#portfolio .container .pfInfo h2 {
+  font-family: "SBAggroB";
+  font-size: 2.3vw;
+  text-align: center;
+}
+#portfolio .container .pfInfo p {
   font-family: "PyeongChang-Bold";
-  font-weight: bold;
+  font-size: 1.2vw;
+  text-align: center;
+}
+#portfolio .container .pfInfo .next {
+  background-color: #f0e8db;
+  border: 0.15vw solid #25375c;
+  color: #25375c;
+  font-family: "SBAggroB";
   font-size: 1vw;
+  padding: 0.5vw 5.5vw 0.4vw;
+  transition: all 0.3s ease;
   cursor: pointer;
-  border: 0.2vw solid #fff;
-  padding: 0.2vw 2vw;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease-out;
-  color: #fff;
 }
-#portfolio .pfzip .pfLogo .overlay button:hover {
-  background-color: #fff;
-  color: #000;
+#portfolio .container .pfInfo .next:hover {
+  background-color: #25375c;
+  color: #f0e8db;
 }
 
 .pf {

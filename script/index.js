@@ -1,5 +1,11 @@
 $(function(){
 
+    $("img").hover(function(){
+        $(".circle").css("opacity", 0);
+    }, function(){
+        $(".circle").css("opacity", 1);
+    })
+
 
     //mousemove effect
     const circle = document.querySelector(".circle")
@@ -207,30 +213,24 @@ $(function(){
         });
 
 
-
-        //logo hover effect
-        $(".pfLogo").hover(function(){
-            
-            $(this).children(".overlay").css("opacity", 1);
-            $(this).find("h2, p, button").css("transform", "translateY(0)");
-            $(this).find("h2, p, button").css("opacity", 1);
-
-        }, function(){
-
-            $(this).children(".overlay").css("opacity", 0);
-            $(this).find("h2, p, button").css("transform", "translateY(20px)");
-            $(this).find("h2, p, button").css("opacity", 0);
-
+        //swiper.js (portfolio swipe)
+        var swiper = new Swiper(".swiper-container", {
+                slidesPerView: 2.5,
+                spaceBetween: 120,
+                grabCursor: true
         });
 
 
-        //logo button click effect
-        $(".pfLogo .overlay button").click(function(){
-            
+        //pfInfo button click
+        $(".next").click(function(){
             $(".boxList").stop().animate({left: -100 + "%"});
 
-            var btnIndex = $(this).parents(".pfLogo").index();
-            $(".pfList").stop().animate({left: -btnIndex * 100 + "%"});
-
+            var pfInfo_i = $(this).parents(".pfInfo").index();
+            $(".pfList").stop().animate({left: -pfInfo_i * 100 + "%"});
         });
+
+        $(".prev").click(function(){
+            $(".boxList").stop().animate({left: 0});
+        });
+
 })
