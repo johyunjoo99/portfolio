@@ -614,6 +614,7 @@ header span {
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  opacity: 0;
 }
 #portfolio .container .pfInfo .image {
   width: 80%;
@@ -710,11 +711,21 @@ header span {
   height: 8%;
   border: 0.2vw solid #25375c;
   background-color: #f0e8db;
-  border-radius: 1vw;
   position: absolute;
   bottom: 5%;
   left: 5%;
   z-index: 2;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.pf .remote .prev {
+  border: 0.15vw solid #25375c;
+  font-family: "SBAggroB";
+  font-size: 1vw;
+  background-color: #f0e8db;
+  padding: 0.45vw 0.8vw 0.3vw;
+  cursor: pointer;
 }
 .pf .pfList {
   width: 600%;

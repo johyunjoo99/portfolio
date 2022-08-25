@@ -78,6 +78,10 @@ $(function(){
     }
 
 
+    //portfolioAnimate effect
+
+
+
     //fullpage scroll effect
     var bn = $(".box").length;
 
@@ -110,15 +114,32 @@ $(function(){
            $(".menu li a span").removeClass("overSpan");
            $(".menu li a").eq(n).find("span").addClass("overSpan");
 
-           if(n = 1){
+           if(n == 1){
                 profileAnimate();
            }
 
-
-           if(n = 2){
+           if(n == 2){
                 $(".prev").click(function(){
                     $(".boxList").stop().animate({left: 0});
                 });
+           }
+
+           var pfi = 0;
+
+           function portfolioAnimate(){
+                    
+                $(".pfInfo").eq(pfi).animate({opacity: 1}, 1000);
+                pfi++;
+        
+                if(pfi >= $(".pfInfo").length){
+                    clearInterval(pfiOpacity);
+                }
+        
+            }
+
+           if(n == 2){
+
+                var pfiOpacity = setInterval(portfolioAnimate, 500);
            }
            
       });
@@ -126,7 +147,13 @@ $(function(){
 
     //page animate effect
     $(".menu li").click(function(){
-        
+
+        var boxWidth = $(".boxList").width();
+
+        if($(".boxList").css("left") == -boxWidth + "px"){
+            $(".boxList").css("left", 0)
+        };
+  
         var liIndex = $(this).index();
         $(".boxList").stop().animate({top: -liIndex*100+"%"});
 
@@ -140,11 +167,27 @@ $(function(){
             profileAnimate();
         }
 
+        if(liIndex == 2){
+            var pfi = 0;
+
+            function portfolioAnimate(){
+                
+                $(".pfInfo").eq(pfi).animate({opacity: 1}, 1000);
+                pfi++;
+        
+                if(pfi >= $(".pfInfo").length){
+                    clearInterval(pfiOpacity);
+                }
+        
+            }
+
+            var pfiOpacity = setInterval(portfolioAnimate, 500);
+         }
+
     });
 
 
     //profile ul hover effect
-
         $(".profileText ul li").hover(function () {
 
             $(".profileText ul li").mousemove(function (event) {
@@ -162,6 +205,7 @@ $(function(){
                 if($(".profileText ul").css("opacity") < 1){
                     $(".popup").css("opacity", 0);
                 }
+
             });
 
 
@@ -171,6 +215,7 @@ $(function(){
             $(".popup").eq(liIdx).stop().css("opacity", 0);
 
         });
+
 
         //가로 스크롤
         var pf = $(".pfbox").length;
