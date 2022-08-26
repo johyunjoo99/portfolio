@@ -352,7 +352,6 @@ header{
 
     .profileText{
         width: 62%; height: 61.5%;
-        // border: 0.01vw solid red;
         position: absolute;
         top: 50%; right: 0;
         transform: translateY(-50%);
@@ -604,6 +603,8 @@ header{
             justify-content: space-evenly;
             align-items: center;
             opacity: 0;
+            transition: all 0.8s ease;
+            transform: translateY(4%);
 
             .image{
                 width: 80%;
@@ -645,33 +646,35 @@ header{
             }
 
             &:first-of-type img:hover{
-                top: -180%;
+                top: -196%;
             }
 
             &:nth-of-type(2) img:hover{
-                top: -176%;
+                top: -192%;
             }
 
             &:nth-of-type(3) img:hover{
-                top: -73%;
+                top: -83%;
             }
 
             &:nth-of-type(4) img:hover{
-                top: -93%;
+                top: -104%;
             }
 
             &:nth-of-type(5) img:hover{
-                top: -267%;
+                top: -287%;
             }
 
             &:last-of-type img:hover{
-                top: -60%;
+                top: -69%;
             }
 
             h2{
                 font-family: $titleFont;
                 font-size: 2.3vw;
                 text-align: center;
+                padding: 0.3vw;
+                line-height: 2.5vw;
             }
 
             p{
@@ -702,17 +705,17 @@ header{
 }
 
 .pf{
-    width: 100%; height: calc(100% / 4);
+    width: 100%; height: 100%;
     position: absolute;
     top: calc(100% / 2); left: 100%;
     overflow-x: hidden;
 
     .remote{
-        width: 90%; height: 8%;
+        width: 90%; height: 2%;
         border: 0.2vw solid $mainColor;
         background-color: #f0e8db;
         position: absolute;
-        bottom: 5%; left: 5%;
+        bottom: 76.3%; left: 5%;
         z-index: 2;
         display: flex;
         justify-content: space-evenly;
@@ -724,7 +727,13 @@ header{
             font-size: 1vw;
             background-color: #f0e8db;
             padding: 0.45vw 0.8vw 0.3vw;
+            transition: all 0.3s ease;
             cursor: pointer;
+
+            &:hover{
+                background-color: $mainColor;
+                color: #fff;
+            }
         }
     }
 
@@ -736,8 +745,182 @@ header{
 
     .pfbox{
         width: 100%; height: 100%;
-        border-right: 0.2vw solid $mainColor;
         position: relative;
+
+        .pfContent{
+            width: 90%; height: 20%;
+            margin: 3.61vw 0 0 4vw;
+            display: flex;
+        }
+
+        .pfText{
+            width: 65%;
+            height: 100%;
+            border: 0.2vw solid $mainColor;
+
+            h2{
+                font-family: $titleFont;
+                font-size: 3.5vw;
+                border-bottom: 0.2vw solid $mainColor;
+                padding: 2vw 0 2vw 1.5vw;
+            }
+
+            .explan{
+                width: 100%; height: 20vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                border-bottom: 0.2vw solid $mainColor;
+
+                p{
+                    font-family: $mainFont;
+                    font-size: 1.2vw;
+                    padding: 5% 3vw 0;
+                    line-height: 2vw;
+                }
+
+                .palette{
+                    width: 100%; height: 6.5vw;
+                    margin-bottom: 2%;
+                }
+
+                .colors{
+                    width: 5vw; height: 100%;
+                    border: 0.15vw solid $mainColor;
+                    float: right;
+                    margin-right: 2%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-evenly;
+                    align-items: center;
+
+                    p{
+                        line-height: 0.9vw;
+                        font-size: 0.9vw;
+                        text-align: center;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .color{
+                    width: 3.5vw; height: 3.5vw;
+                    border: 0.15vw solid $mainColor;
+                }
+            }
+
+            .btnZip{
+                width: 100%;
+                height: 11.8vw;
+            }
+
+            .hashtag{
+                width: 100%;
+                height: 30%;
+                border-bottom: 0.2vw solid $mainColor;
+
+                span{
+                    display: inline-block;
+                    font-family: $mainFont;
+                    font-size: 1vw;
+                    border: 0.15vw solid $mainColor;
+                    border-radius: 5vw;
+                    padding: 0.5% 2%;
+                    margin: 1.4% 1% 0;
+                    cursor: default;
+                }
+            }
+
+            .pfBtn{
+                display: inline-block;
+                width: 80%;
+                height: 70%;
+                border-right: 0.2vw solid $mainColor;
+            }
+
+            .goSite{
+                width: 100%;
+                height: 50%;
+                border-bottom: 0.2vw solid $mainColor;
+                background-color: #f0e8db;
+                transition: all 0.3s ease;
+                cursor: pointer;
+
+                p{
+                    font-family: $titleFont;
+                    font-size: 1.3vw;
+                    text-align: center;
+                    padding-top: 3.5%;
+                }
+
+                &:hover{
+                    background-color: $mainColor;
+                }
+
+                &:hover p{
+                    color: #fff;
+                }
+            }
+
+            .download{
+                width: 100%;
+                height: 50%;
+                background-color: #f0e8db;
+                transition: all 0.3s ease;
+                cursor: pointer;
+
+                p{
+                    font-family: $titleFont;
+                    font-size: 1.3vw;
+                    text-align: center;
+                    padding-top: 3.5%;
+                }
+
+                &:hover{
+                    background-color: $mainColor;
+                }
+
+                &:hover p{
+                    color: #fff;
+                }
+            }
+
+            .slideBtn{
+                display: inline;
+                width: 20%; height: 100%;
+                float: right;
+                position: relative;
+
+                i{
+                    position: absolute;
+                    top: 35%; left: 50%;
+                    z-index: 2;
+                    transform: translate(-50%, -50%);
+                    font-size: 2vw;
+                    cursor: pointer;
+                }
+
+                .fa-pause{
+                    display: none;
+                }
+
+                img{
+                    width: 6vw;
+                    position: absolute;
+                    top: 34%; left: 50%;
+                    transform: translate(-50%, -50%);
+                }
+            }
+
+        }
+
+        .pfImg{
+            width: 35%;
+            height: 100%;
+            border: 0.2vw solid $mainColor;
+            border-left: none;
+        }
+
     }
 }
 

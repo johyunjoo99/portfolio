@@ -615,6 +615,8 @@ header span {
   justify-content: space-evenly;
   align-items: center;
   opacity: 0;
+  transition: all 0.8s ease;
+  transform: translateY(4%);
 }
 #portfolio .container .pfInfo .image {
   width: 80%;
@@ -656,27 +658,29 @@ header span {
   transition: 4s ease;
 }
 #portfolio .container .pfInfo:first-of-type img:hover {
-  top: -180%;
+  top: -196%;
 }
 #portfolio .container .pfInfo:nth-of-type(2) img:hover {
-  top: -176%;
+  top: -192%;
 }
 #portfolio .container .pfInfo:nth-of-type(3) img:hover {
-  top: -73%;
+  top: -83%;
 }
 #portfolio .container .pfInfo:nth-of-type(4) img:hover {
-  top: -93%;
+  top: -104%;
 }
 #portfolio .container .pfInfo:nth-of-type(5) img:hover {
-  top: -267%;
+  top: -287%;
 }
 #portfolio .container .pfInfo:last-of-type img:hover {
-  top: -60%;
+  top: -69%;
 }
 #portfolio .container .pfInfo h2 {
   font-family: "SBAggroB";
   font-size: 2.3vw;
   text-align: center;
+  padding: 0.3vw;
+  line-height: 2.5vw;
 }
 #portfolio .container .pfInfo p {
   font-family: "PyeongChang-Bold";
@@ -700,7 +704,7 @@ header span {
 
 .pf {
   width: 100%;
-  height: 25%;
+  height: 100%;
   position: absolute;
   top: 50%;
   left: 100%;
@@ -708,11 +712,11 @@ header span {
 }
 .pf .remote {
   width: 90%;
-  height: 8%;
+  height: 2%;
   border: 0.2vw solid #25375c;
   background-color: #f0e8db;
   position: absolute;
-  bottom: 5%;
+  bottom: 76.3%;
   left: 5%;
   z-index: 2;
   display: flex;
@@ -725,7 +729,12 @@ header span {
   font-size: 1vw;
   background-color: #f0e8db;
   padding: 0.45vw 0.8vw 0.3vw;
+  transition: all 0.3s ease;
   cursor: pointer;
+}
+.pf .remote .prev:hover {
+  background-color: #25375c;
+  color: #fff;
 }
 .pf .pfList {
   width: 600%;
@@ -736,6 +745,160 @@ header span {
 .pf .pfbox {
   width: 100%;
   height: 100%;
-  border-right: 0.2vw solid #25375c;
   position: relative;
+}
+.pf .pfbox .pfContent {
+  width: 90%;
+  height: 20%;
+  margin: 3.61vw 0 0 4vw;
+  display: flex;
+}
+.pf .pfbox .pfText {
+  width: 65%;
+  height: 100%;
+  border: 0.2vw solid #25375c;
+}
+.pf .pfbox .pfText h2 {
+  font-family: "SBAggroB";
+  font-size: 3.5vw;
+  border-bottom: 0.2vw solid #25375c;
+  padding: 2vw 0 2vw 1.5vw;
+}
+.pf .pfbox .pfText .explan {
+  width: 100%;
+  height: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.2vw solid #25375c;
+}
+.pf .pfbox .pfText .explan p {
+  font-family: "PyeongChang-Bold";
+  font-size: 1.2vw;
+  padding: 5% 3vw 0;
+  line-height: 2vw;
+}
+.pf .pfbox .pfText .explan .palette {
+  width: 100%;
+  height: 6.5vw;
+  margin-bottom: 2%;
+}
+.pf .pfbox .pfText .explan .colors {
+  width: 5vw;
+  height: 100%;
+  border: 0.15vw solid #25375c;
+  float: right;
+  margin-right: 2%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.pf .pfbox .pfText .explan .colors p {
+  line-height: 0.9vw;
+  font-size: 0.9vw;
+  text-align: center;
+  text-transform: uppercase;
+}
+.pf .pfbox .pfText .explan .color {
+  width: 3.5vw;
+  height: 3.5vw;
+  border: 0.15vw solid #25375c;
+}
+.pf .pfbox .pfText .btnZip {
+  width: 100%;
+  height: 11.8vw;
+}
+.pf .pfbox .pfText .hashtag {
+  width: 100%;
+  height: 30%;
+  border-bottom: 0.2vw solid #25375c;
+}
+.pf .pfbox .pfText .hashtag span {
+  display: inline-block;
+  font-family: "PyeongChang-Bold";
+  font-size: 1vw;
+  border: 0.15vw solid #25375c;
+  border-radius: 5vw;
+  padding: 0.5% 2%;
+  margin: 1.4% 1% 0;
+  cursor: default;
+}
+.pf .pfbox .pfText .pfBtn {
+  display: inline-block;
+  width: 80%;
+  height: 70%;
+  border-right: 0.2vw solid #25375c;
+}
+.pf .pfbox .pfText .goSite {
+  width: 100%;
+  height: 50%;
+  border-bottom: 0.2vw solid #25375c;
+  background-color: #f0e8db;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.pf .pfbox .pfText .goSite p {
+  font-family: "SBAggroB";
+  font-size: 1.3vw;
+  text-align: center;
+  padding-top: 3.5%;
+}
+.pf .pfbox .pfText .goSite:hover {
+  background-color: #25375c;
+}
+.pf .pfbox .pfText .goSite:hover p {
+  color: #fff;
+}
+.pf .pfbox .pfText .download {
+  width: 100%;
+  height: 50%;
+  background-color: #f0e8db;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.pf .pfbox .pfText .download p {
+  font-family: "SBAggroB";
+  font-size: 1.3vw;
+  text-align: center;
+  padding-top: 3.5%;
+}
+.pf .pfbox .pfText .download:hover {
+  background-color: #25375c;
+}
+.pf .pfbox .pfText .download:hover p {
+  color: #fff;
+}
+.pf .pfbox .pfText .slideBtn {
+  display: inline;
+  width: 20%;
+  height: 100%;
+  float: right;
+  position: relative;
+}
+.pf .pfbox .pfText .slideBtn i {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  font-size: 2vw;
+  cursor: pointer;
+}
+.pf .pfbox .pfText .slideBtn .fa-pause {
+  display: none;
+}
+.pf .pfbox .pfText .slideBtn img {
+  width: 6vw;
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.pf .pfbox .pfImg {
+  width: 35%;
+  height: 100%;
+  border: 0.2vw solid #25375c;
+  border-left: none;
 }

@@ -1,6 +1,6 @@
 $(function(){
 
-    $("img").hover(function(){
+    $("img").not("[alt='logo text']").not("[alt='slideshow']").hover(function(){
         $(".circle").css("opacity", 0);
     }, function(){
         $(".circle").css("opacity", 1);
@@ -78,10 +78,6 @@ $(function(){
     }
 
 
-    //portfolioAnimate effect
-
-
-
     //fullpage scroll effect
     var bn = $(".box").length;
 
@@ -128,7 +124,8 @@ $(function(){
 
            function portfolioAnimate(){
                     
-                $(".pfInfo").eq(pfi).animate({opacity: 1}, 1000);
+            $(".pfInfo").eq(pfi).css("opacity", 1).css("transform", "translateY(0)");
+
                 pfi++;
         
                 if(pfi >= $(".pfInfo").length){
@@ -172,7 +169,8 @@ $(function(){
 
             function portfolioAnimate(){
                 
-                $(".pfInfo").eq(pfi).animate({opacity: 1}, 1000);
+                $(".pfInfo").eq(pfi).css("opacity", 1).css("transform", "translateY(0)");
+
                 pfi++;
         
                 if(pfi >= $(".pfInfo").length){
@@ -260,7 +258,7 @@ $(function(){
 
         //swiper.js (portfolio swipe)
         var swiper = new Swiper(".swiper-container", {
-                slidesPerView: 2.5,
+                slidesPerView: 2.6,
                 spaceBetween: 120,
                 grabCursor: true
         });
@@ -278,4 +276,13 @@ $(function(){
             $(".boxList").stop().animate({left: 0});
         });
 
+
+        //slideshow button click
+        $(".fa-play").click(function(){
+            $(this).css("display", "none").siblings(".fa-pause").css("display", "block");
+        });
+
+        $(".fa-pause").click(function(){
+            $(this).css("display", "none").siblings(".fa-play").css("display", "block");
+        });
 })
