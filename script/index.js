@@ -285,4 +285,25 @@ $(function(){
         $(".fa-pause").click(function(){
             $(this).css("display", "none").siblings(".fa-play").css("display", "block");
         });
+
+        
+        //fade slide
+        $(".slideBtn .fa-play").click(function(){
+
+            var boxI = $(this).parents(".pfbox");
+            var conI = boxI.children(".pfContent");
+            var slideI = conI.find(".pfSlide");
+
+            function fadeSlide(){
+                slideI.children("li:first").appendTo(slideI);
+            }
+
+            fadeslide = setInterval(fadeSlide, 3500);    
+
+        });
+
+        $(".slideBtn .fa-pause").click(function(){
+            clearInterval(fadeslide);
+        });
+        
 })
