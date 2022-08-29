@@ -1,6 +1,6 @@
 $(function(){
 
-    $("img").not("[alt='logo text']").not("[alt='slideshow']").hover(function(){
+    $("img").not("[alt='logo text']").not("[alt='slideshow']").not(".remote img").hover(function(){
         $(".circle").css("opacity", 0);
     }, function(){
         $(".circle").css("opacity", 1);
@@ -277,18 +277,30 @@ $(function(){
         });
 
 
-        //slideshow button click
-        $(".fa-play").click(function(){
-            $(this).css("display", "none").siblings(".fa-pause").css("display", "block");
+        $(".image img").hover(function(){
+
+            var imgHeight = $(this).height();
+            var imageH = $(".image").height();
+
+            $(this).stop().animate({top: -(imgHeight - imageH)}, 3000);
+        }, function(){
+            $(this).stop().animate({top: 0}, 3000);
         });
 
-        $(".fa-pause").click(function(){
-            $(this).css("display", "none").siblings(".fa-play").css("display", "block");
+
+        // remote img click
+        $(".remote img").click(function(){
+
+            var imgI = $(this).index();
+
+            $(".pfList").stop().animate({left: -imgI * 100 + 100 + "%"});
         });
 
         
         //fade slide
         $(".slideBtn .fa-play").click(function(){
+
+            $(this).css("display", "none").siblings(".fa-pause").css("display", "block");
 
             var boxI = $(this).parents(".pfbox");
             var conI = boxI.children(".pfContent");
@@ -298,12 +310,16 @@ $(function(){
                 slideI.children("li:first").appendTo(slideI);
             }
 
-            fadeslide = setInterval(fadeSlide, 3500);    
+            fadeslide = setInterval(fadeSlide, 3000);    
 
         });
 
         $(".slideBtn .fa-pause").click(function(){
+
+            $(this).css("display", "none").siblings(".fa-play").css("display", "block");
+
             clearInterval(fadeslide);
+
         });
         
 })

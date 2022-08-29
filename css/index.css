@@ -655,25 +655,6 @@ header span {
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  transition: 4s ease;
-}
-#portfolio .container .pfInfo:first-of-type img:hover {
-  top: -196%;
-}
-#portfolio .container .pfInfo:nth-of-type(2) img:hover {
-  top: -192%;
-}
-#portfolio .container .pfInfo:nth-of-type(3) img:hover {
-  top: -83%;
-}
-#portfolio .container .pfInfo:nth-of-type(4) img:hover {
-  top: -104%;
-}
-#portfolio .container .pfInfo:nth-of-type(5) img:hover {
-  top: -287%;
-}
-#portfolio .container .pfInfo:last-of-type img:hover {
-  top: -69%;
 }
 #portfolio .container .pfInfo h2 {
   font-family: "SBAggroB";
@@ -735,6 +716,13 @@ header span {
 .pf .remote .prev:hover {
   background-color: #25375c;
   color: #fff;
+}
+.pf .remote img {
+  height: 90%;
+  cursor: pointer;
+}
+.pf .remote img[alt="the classic"], .pf .remote img[alt="studio painting"] {
+  height: 100%;
 }
 .pf .pfList {
   width: 600%;
@@ -915,10 +903,12 @@ header span {
   left: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.8s ease;
+  padding: 0.01vw;
 }
 .pf .pfbox .pfSlide li:not(:nth-of-type(2)) {
   opacity: 0;
 }
 .pf .pfbox .pfSlide img {
   width: 100%;
+  height: 100%;
 }

@@ -641,32 +641,7 @@ header{
                     position: absolute;
                     top: 0; left: 50%;
                     transform: translateX(-50%);
-                    transition: 4s ease;
                 }
-            }
-
-            &:first-of-type img:hover{
-                top: -196%;
-            }
-
-            &:nth-of-type(2) img:hover{
-                top: -192%;
-            }
-
-            &:nth-of-type(3) img:hover{
-                top: -83%;
-            }
-
-            &:nth-of-type(4) img:hover{
-                top: -104%;
-            }
-
-            &:nth-of-type(5) img:hover{
-                top: -287%;
-            }
-
-            &:last-of-type img:hover{
-                top: -69%;
             }
 
             h2{
@@ -733,6 +708,15 @@ header{
             &:hover{
                 background-color: $mainColor;
                 color: #fff;
+            }
+        }
+
+        img{
+            height: 90%;
+            cursor: pointer;
+
+            &[alt="the classic"], &[alt="studio painting"]{
+                height: 100%;
             }
         }
     }
@@ -933,6 +917,7 @@ header{
                 top: 50%; left: 50%;
                 transform: translate(-50%, -50%);
                 transition: all 0.8s ease;
+                padding: 0.01vw;
 
                 &:not(:nth-of-type(2)){
                     opacity: 0;
@@ -942,6 +927,7 @@ header{
 
             img{
                 width: 100%;
+                height: 100%;
             }
 
 
