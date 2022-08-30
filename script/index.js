@@ -321,5 +321,16 @@ $(function(){
             clearInterval(fadeslide);
 
         });
+
+
+        //card slide button click
+        $(".plus").click(function(){
+            $(".cardBox:first").appendTo(".cardList");
+            $(".cardBox").not(":nth-of-type(2)").css("opacity", 0);
+
+            setTimeout(function(){
+                $(".cardBox").css("opacity", 1);
+            }, 1000)
+        });
         
 })

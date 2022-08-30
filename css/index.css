@@ -459,7 +459,7 @@ header span {
   width: 28vw;
 }
 #profile .popup.education p {
-  padding: 0 10%;
+  padding: 0 5%;
 }
 #profile .popup.education span {
   float: right;
@@ -684,6 +684,85 @@ header span {
   color: #f0e8db;
 }
 
+#about .card {
+  width: 21vw;
+  height: 29vw;
+}
+#about .backCard {
+  background-color: #25375c;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#about .cardBox {
+  border: 0.15vw solid #25375c;
+  background-color: #f0e8db;
+  position: absolute;
+  top: 95%;
+  left: 5%;
+  transform: rotate(-10deg);
+  transition: all 0.5s ease;
+}
+#about .cardBox:nth-of-type(2) {
+  top: 22%;
+  left: 37%;
+}
+#about .cardBox:nth-of-type(3) {
+  top: -53%;
+  left: 70%;
+}
+#about .cardBox:not(:first-of-type, :nth-of-type(2), :nth-of-type(3)) {
+  opacity: 0;
+}
+#about .cardBtn {
+  width: 12vw;
+  height: 3vw;
+  position: absolute;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#about .cardBtn button {
+  font-size: 1.5vw;
+  font-family: "PyeongChang-Bold";
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+#about .cardBtn span {
+  width: 5vw;
+  display: inline-block;
+  border-top: 0.2vw solid #25375c;
+}
+#about .cardBtn.leftBtn {
+  top: 50%;
+  left: 15%;
+  transform: translateY(-50%);
+}
+#about .cardBtn.rightBtn {
+  top: 50%;
+  right: 15%;
+  transform: translateY(-50%);
+}
+
+@-webkit-keyframes textLeftLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes textLeftLoop {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
 .pf {
   width: 100%;
   height: 100%;
@@ -855,7 +934,7 @@ header span {
 }
 .pf .pfbox .pfText .download {
   width: 100%;
-  height: 47%;
+  height: 48.5%;
   background-color: #f0e8db;
   transition: all 0.3s ease;
   cursor: pointer;

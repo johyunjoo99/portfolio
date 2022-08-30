@@ -434,7 +434,7 @@ header{
             width: 28vw;
             
             p{
-                padding: 0 10%;
+                padding: 0 5%;
             }
 
             span{
@@ -680,6 +680,91 @@ header{
 
 }
 
+
+//end
+#about{
+
+    .card{
+        width: 21vw; height: 29vw;
+    }
+
+    .backCard{
+        background-color: $mainColor;
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .cardBox{
+        border: 0.15vw solid $mainColor;
+        background-color: #f0e8db;
+        position: absolute;
+        top: 95%; left: 5%;
+        transform: rotate(-10deg);
+        transition: all 0.5s ease;
+
+        &:nth-of-type(2){
+            top: 22%; left: 37%;
+        }
+
+        &:nth-of-type(3){
+            top: -53%; left: 70%;
+        }
+
+        &:not(:first-of-type, :nth-of-type(2), :nth-of-type(3)){
+            opacity: 0;
+        }
+    }
+
+    .cardBtn{
+        width: 12vw; height: 3vw;
+        position: absolute;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        
+        button{
+            font-size: 1.5vw;
+            font-family: $mainFont;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        span{
+            width: 5vw;
+            display: inline-block;
+            border-top: 0.2vw solid $mainColor;
+        }
+
+        &.leftBtn{
+            top: 50%; left: 15%;
+            transform: translateY(-50%);
+        }
+
+        &.rightBtn{
+            top: 50%; right: 15%;
+            transform: translateY(-50%);
+        }
+    }
+}
+
+
+// text flow aniamtion
+@keyframes textLeftLoop{
+    0%{
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    100%{
+        -webkit-transform: translate3d(-100%, 0, 0);
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+
+//portfolio sub page
 .pf{
     width: 100%; height: 100%;
     position: absolute;
@@ -865,7 +950,7 @@ header{
 
             .download{
                 width: 100%;
-                height: 47%;
+                height: 48.5%;
                 background-color: #f0e8db;
                 transition: all 0.3s ease;
                 cursor: pointer;
