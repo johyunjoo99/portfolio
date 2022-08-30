@@ -310,7 +310,7 @@ $(function(){
                 slideI.children("li:first").appendTo(slideI);
             }
 
-            fadeslide = setInterval(fadeSlide, 3000);    
+            fadeslide = setInterval(fadeSlide, 2000);    
 
         });
 
