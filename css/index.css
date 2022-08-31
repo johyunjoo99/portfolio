@@ -685,35 +685,125 @@ header span {
 }
 
 #about .card {
-  width: 21vw;
-  height: 29vw;
+  width: 20vw;
+  height: 29.5vw;
+  background-color: #f0e8db;
 }
 #about .backCard {
   background-color: #25375c;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
+  transition: all 0.8s ease;
+  opacity: 0;
 }
 #about .cardBox {
   border: 0.15vw solid #25375c;
-  background-color: #f0e8db;
+  border-radius: 1vw;
   position: absolute;
-  top: 95%;
-  left: 5%;
-  transform: rotate(-10deg);
-  transition: all 0.5s ease;
+  top: 100%;
+  left: 2%;
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+}
+#about .cardBox:nth-of-type(1) {
+  top: -65%;
+  left: 75%;
 }
 #about .cardBox:nth-of-type(2) {
-  top: 22%;
+  top: 55%;
   left: 37%;
-}
-#about .cardBox:nth-of-type(3) {
-  top: -53%;
-  left: 70%;
-}
-#about .cardBox:not(:first-of-type, :nth-of-type(2), :nth-of-type(3)) {
   opacity: 0;
+}
+#about .cardBox:nth-of-type(2) .cardBack {
+  z-index: -2;
+  transition: all 1s ease;
+}
+#about .cardBox:nth-of-type(2) .cardFront {
+  transform: rotateY(-180deg);
+}
+#about .cardBox:last-of-type {
+  display: none;
+}
+#about .cardBack {
+  width: 100%;
+  height: 100%;
+  border-radius: 1vw;
+  background: url("../img/index_img/card_background.svg") #f0e8db;
+  background-position: center;
+  background-size: 100% 88%;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+#about .cardFront {
+  width: 100%;
+  height: 100%;
+  background-color: #f0e8db;
+  border-radius: 1vw;
+  position: absolute;
+  z-index: -1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+#about .cardFront img[alt=emoticon] {
+  width: 10vw;
+}
+#about .cardFront img[alt=graph] {
+  width: 13vw;
+}
+#about .cardFront h2 {
+  font-family: "SBAggroB";
+  font-size: 2.2vw;
+  text-align: center;
+}
+#about .cardFront p {
+  font-family: "PyeongChang-Bold";
+  font-size: 1.2vw;
+  text-align: center;
+  line-height: 2vw;
+  padding: 0 1.2vw;
+}
+#about .cardFront .pin {
+  display: inline-block;
+  width: 1.4vw;
+  height: 1.4vw;
+  position: absolute;
+  top: 5.55vw;
+  right: 3.952vw;
+  z-index: -1;
+  border-radius: 5vw;
+  background: rgba(255, 255, 255, 0);
+}
+#about .cardFront .pin::before {
+  content: "";
+  position: relative;
+  display: block;
+  width: 300%;
+  height: 300%;
+  box-sizing: border-box;
+  margin-left: -100%;
+  margin-top: -100%;
+  border-radius: 45px;
+  background-color: #25375c;
+  -webkit-animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+          animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+#about .cardFront .pin::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  -webkit-animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+          animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
 }
 #about .cardBtn {
   width: 12vw;
@@ -722,6 +812,8 @@ header span {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  opacity: 0;
+  transition: all 0.8s ease;
 }
 #about .cardBtn button {
   font-size: 1.5vw;
@@ -736,31 +828,53 @@ header span {
   border-top: 0.2vw solid #25375c;
 }
 #about .cardBtn.leftBtn {
-  top: 50%;
+  top: 45%;
   left: 15%;
   transform: translateY(-50%);
 }
 #about .cardBtn.rightBtn {
-  top: 50%;
+  top: 45%;
   right: 15%;
   transform: translateY(-50%);
 }
 
-@-webkit-keyframes textLeftLoop {
+@-webkit-keyframes pulse-ring {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: scale(0.33);
   }
-  100% {
-    transform: translate3d(-100%, 0, 0);
+  80%, 100% {
+    opacity: 0;
   }
 }
 
-@keyframes textLeftLoop {
+@keyframes pulse-ring {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: scale(0.33);
+  }
+  80%, 100% {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes pulse-dot {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
   }
   100% {
-    transform: translate3d(-100%, 0, 0);
+    transform: scale(0.8);
+  }
+}
+@keyframes pulse-dot {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.8);
   }
 }
 .pf {

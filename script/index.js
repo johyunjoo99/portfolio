@@ -78,6 +78,31 @@ $(function(){
     }
 
 
+    //aboutAnimate effect
+    function aboutAnimate(){
+
+        setTimeout(function(){
+            $(".backCard").css("opacity", 1).css("top", "50%");
+        }, 500)
+
+        setTimeout(function(){
+            $(".leftBtn").css("opacity", 1).css("top", "50%");
+            $(".rightBtn").css("opacity", 1).css("top", "50%");
+        }, 700)
+
+        setTimeout(function(){
+            $(".cardBox").not(":nth-of-type(2)").css("top", "87%").css("transform", "rotate(8deg)");
+            $(".cardBox:nth-of-type(1)").css("top", "-45%").css("transform", "rotate(8deg)");
+        }, 900)
+
+        setTimeout(function(){
+            $(".cardBox:nth-of-type(2)").css("opacity", 1);
+            $(".cardBox:nth-of-type(2)").css("top", "21%").css("transform", "rotate(-8deg) rotateY(-180deg)");
+        }, 1200)
+        
+    }
+
+
     //fullpage scroll effect
     var bn = $(".box").length;
 
@@ -114,29 +139,28 @@ $(function(){
                 profileAnimate();
            }
 
+           var pfi = 0;
+
+           function portfolioAnimate(){
+                $(".pfInfo").eq(pfi).css("opacity", 1).css("transform", "translateY(0)");
+
+                pfi++;
+
+                if(pfi >= $(".pfInfo").length){
+                    clearInterval(pfiOpacity);
+                }
+            }
+
            if(n == 2){
+                var pfiOpacity = setInterval(portfolioAnimate, 500);
+
                 $(".prev").click(function(){
                     $(".boxList").stop().animate({left: 0});
                 });
            }
 
-           var pfi = 0;
-
-           function portfolioAnimate(){
-                    
-            $(".pfInfo").eq(pfi).css("opacity", 1).css("transform", "translateY(0)");
-
-                pfi++;
-        
-                if(pfi >= $(".pfInfo").length){
-                    clearInterval(pfiOpacity);
-                }
-        
-            }
-
-           if(n == 2){
-
-                var pfiOpacity = setInterval(portfolioAnimate, 500);
+           if(n == 3){
+                aboutAnimate();
            }
            
       });
@@ -168,18 +192,19 @@ $(function(){
             var pfi = 0;
 
             function portfolioAnimate(){
-                
                 $(".pfInfo").eq(pfi).css("opacity", 1).css("transform", "translateY(0)");
 
                 pfi++;
-        
+
                 if(pfi >= $(".pfInfo").length){
                     clearInterval(pfiOpacity);
                 }
-        
             }
-
             var pfiOpacity = setInterval(portfolioAnimate, 500);
+         }
+
+         if(liIndex == 3){
+            aboutAnimate();
          }
 
     });
@@ -322,15 +347,39 @@ $(function(){
 
         });
 
+        function cardSlide(){
+            $(".cardBox").css("top", "87%");
+
+            $(".cardBox:nth-of-type(1)").css("top", "-45%");
+
+            $(".cardBox:nth-of-type(2)").css("top", "21%")
+            .css("transform", "rotate(-8deg) rotateY(-180deg)");
+
+            $(".cardBox").not(":nth-of-type(2)").css("opacity", 0)
+            .css("transform", "rotate(8deg)");
+
+            $(".cardBox").children(".cardBack").css("z-index", 1);
+            
+            $(".cardBox:nth-of-type(2)").children(".cardBack").css("z-index", -2);
+        }
 
         //card slide button click
+        $(".minus").click(function(){
+            $(".cardBox:last").prependTo(".cardList");
+            cardSlide();
+
+            setTimeout(function(){
+                $(".cardBox").not(":last-of-type").css("opacity", 1);
+            }, 500)
+        });
+
         $(".plus").click(function(){
             $(".cardBox:first").appendTo(".cardList");
-            $(".cardBox").not(":nth-of-type(2)").css("opacity", 0);
+            cardSlide();
 
             setTimeout(function(){
                 $(".cardBox").css("opacity", 1);
-            }, 1000)
+            }, 500)
         });
         
 })
