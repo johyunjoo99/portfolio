@@ -317,22 +317,23 @@ header{
     overflow: hidden;
 
     .profile{
-        width: 394px; height: 525px;
+        width: 23vw; height: 33vw;
         position: absolute;
         top: 50%; left: 8%;
         transform: translateY(-50%);
     }
 
     img[alt="profile"]{
+        width: 100%;
         position: absolute;
-        top: 0; left: 10%;
+        top: 1%; left: 5%;
         display: none;
     }
 
     .border{
-        width: 394px; height: 525px;
+        width: 23vw; height: 33vw;
         position: absolute;
-        top: 50%; left: 10%;
+        top: 45%; left: 0;
         transform: translateY(-50%);
     }
 
@@ -724,7 +725,7 @@ header{
             }
         }
 
-        &:last-of-type{
+        &:not(":nth-of-type(1), :nth-of-type(2), :nth-of-type(3)"){
             display: none;
         }
     }

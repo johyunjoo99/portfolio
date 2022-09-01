@@ -1,6 +1,6 @@
 $(function(){
 
-    $("img").not("[alt='logo text']").not("[alt='slideshow']").not(".remote img").hover(function(){
+    $("img").not("[alt='logo text']").not("[alt='slideshow']").not(".remote img").not(".cardFront img").hover(function(){
         $(".circle").css("opacity", 0);
     }, function(){
         $(".circle").css("opacity", 1);
@@ -369,7 +369,7 @@ $(function(){
             cardSlide();
 
             setTimeout(function(){
-                $(".cardBox").not(":last-of-type").css("opacity", 1);
+                $(".cardBox").css("opacity", 1);
             }, 500)
         });
 
