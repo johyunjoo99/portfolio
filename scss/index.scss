@@ -16,7 +16,6 @@
 // 평창체
 
 $mainColor: #25375c;
-$skyblue: #83aeaf;
 $blue: #728397;
 $titleFont: 'SBAggroB';
 $mainFont: 'PyeongChang-Bold';
@@ -317,7 +316,7 @@ header{
     overflow: hidden;
 
     .profile{
-        width: 23vw; height: 33vw;
+        width: 22vw; height: 32vw;
         position: absolute;
         top: 50%; left: 8%;
         transform: translateY(-50%);
@@ -331,7 +330,7 @@ header{
     }
 
     .border{
-        width: 23vw; height: 33vw;
+        width: 22vw; height: 32vw;
         position: absolute;
         top: 45%; left: 0;
         transform: translateY(-50%);
@@ -725,7 +724,7 @@ header{
             }
         }
 
-        &:not(":nth-of-type(1), :nth-of-type(2), :nth-of-type(3)"){
+        &:not(:nth-of-type(1), :nth-of-type(2), :nth-of-type(3)){
             display: none;
         }
     }
@@ -746,6 +745,7 @@ header{
         border-radius: 1vw;
         position: absolute;
         z-index: -1;
+        transform-style: preserve-3d;
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
@@ -809,6 +809,13 @@ header{
                 box-shadow: 0 0 8px rgba(0,0,0,.3);
                 animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
             }
+        }
+
+        .depth{
+            text-shadow: 0.1vw 0.3vw 0.3vw rgba(0, 0, 0, 0.2);
+            transform: scale(0);
+            perspective: inherit;
+            transition: all 0.5s ease;
         }
     }
 

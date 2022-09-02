@@ -255,19 +255,9 @@ $(function(){
             } else if(event.detail) delta = -event.detail / 3;
 
             if(delta < 0){
-                console.log(n);
-                if(n == 2){
-                    n = 2;
                     w = $(this).index() + 1;
-                }
-                
             } else{
-                console.log(n);
-                if(n == 2){
-                    n = 2;
                     w = $(this).index() - 1;
-                }
-                
             }
 
             if(w >= pf){
@@ -365,6 +355,19 @@ $(function(){
 
         //card slide button click
         $(".minus").click(function(){
+        
+            if($(".depth").parents(".card").index() == 0){
+                setTimeout(function(){
+                    $(".depth").css("transform", "scale(1.4)");
+
+                    setTimeout(function(){
+                        $(".depth").css("transform", "scale(1)");
+                    },510)
+                }, 500)
+            }else{
+                $(".depth").css("transform", "scale(0)");
+            }
+
             $(".cardBox:last").prependTo(".cardList");
             cardSlide();
 
@@ -374,6 +377,19 @@ $(function(){
         });
 
         $(".plus").click(function(){
+
+            if($(".depth").parents(".card").index() == 2){
+                setTimeout(function(){
+                    $(".depth").css("transform", "scale(1.4)");
+
+                    setTimeout(function(){
+                        $(".depth").css("transform", "scale(1)");
+                    },510)
+                }, 500)
+            }else{
+                $(".depth").css("transform", "scale(0)");
+            }
+
             $(".cardBox:first").appendTo(".cardList");
             cardSlide();
 
